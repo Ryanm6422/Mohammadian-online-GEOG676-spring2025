@@ -1,7 +1,7 @@
 import arcpy
 
-arcpy.env.workspace = r'\\storage.it.tamu.edu\TAMU\OAL\Homes\ryanm64\GEOG Labs\codes_env'
-folder_path = r'\\storage.it.tamu.edu\TAMU\OAL\Homes\ryanm64\GEOG Labs'
+folder_path = r'C:\Users\local_ryanm64\Documents\Mohammadian-online-GEOG676-spring2025\labs\lab04'
+arcpy.env.workspace = folder_path
 gdb_name = 'Test.gdb'
 gdb_path = folder_path + '\\' + gdb_name
 arcpy.CreateFileGDB_management(folder_path, gdb_name)
@@ -30,4 +30,4 @@ garageBuffered = arcpy.Buffer_analysis(gdb_path + '\Garage_Points_reprojected', 
 
 arcpy.Intersect_analysis([garageBuffered, buildings], gdb_path + '\Garage_Building_Intersection', 'ALL')
 
-arcpy.TableToTable_conversion(gdb_path + '\Garage_Building_Intersection', '\\storage.it.tamu.edu\TAMU\OAL\Homes\ryanm64\GEOG Labs', 'nearbyBuildings.csv')
+arcpy.TableToTable_conversion(gdb_path + '\Garage_Building_Intersection', folder_path, 'nearbyBuildings.csv')
