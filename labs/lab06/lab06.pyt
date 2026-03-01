@@ -51,7 +51,7 @@ class MapGenerator(object):
         time.sleep(0.5)
 
         arcpy.SetProgressorLabel("Getting layer...")
-        layer = m.listLayers(input_layer)[0]
+        layer = parameters[0].value
         arcpy.SetProgressorPosition()
         time.sleep(0.5)
 
